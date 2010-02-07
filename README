@@ -1,0 +1,46 @@
+Sikwamic: Simple Key-Value With Comment
+---------------------------------------
+
+What is it good for?
+--------------------
+You can use REDIS straight from HTTP with long polling on GETs, commet style. This is very useful for development of web-realtime apps like web-chat
+
+* Uses RACK - http://github.com/chneukirchen/rack
+* Uses REDIS - http://github.com/antirez/redis
+
+How to run?
+-----------
+make sure you have Rack and Redis installed and run:
+
+ruby sikwamic.rb
+
+How to use?
+-----------
+
+1. Write a value through:
+http://localhost:9291/set/KEY/VALUE  (http://localhost:9291/set/user_55_name/john)
+output: john
+
+2. Read a value through:
+http://localhost:9291/get/KEY  (http://localhost:9291/get/user_55_name)
+output: john
+
+3. Commently read a value through: *
+This action opens a connection to the server and returns the value of the KEY only once the VALUE is different than inputed
+
+if "user_55_name" value is "john" 
+
+then...
+http://localhost:9291/get/KEY/OLDVALUE  (http://localhost:9291/get_if_modified/user_55_name/john)
+output: john
+response: 5 seconds
+
+and...
+http://localhost:9291/get/KEY/OLDVALUE  (http://localhost:9291/get_if_modified/user_55_name/jeff)
+output: john
+response: immediate
+
+You can use Sikwamic inside infrastructure of realtime webchat and for SIMPLE online key-value over HTTP activities (over AJAX)
+
+Enjoy ;-)
+
