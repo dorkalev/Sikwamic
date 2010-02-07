@@ -26,17 +26,18 @@ http://localhost:9291/get/KEY  (http://localhost:9291/get/user_55_name)
 output: john
 
 3. Commently read a value through: *
+http://localhost:9291/get/KEY/OLDVALUE
 This action opens a connection to the server and returns the value of the KEY only once the VALUE is different than inputed
 
 if "user_55_name" value is "john" 
 
 then...
-http://localhost:9291/get/KEY/OLDVALUE  (http://localhost:9291/get_if_modified/user_55_name/john)
+http://localhost:9291/get_if_modified/user_55_name/john)
 output: john
 response: 5 seconds
 
 and...
-http://localhost:9291/get/KEY/OLDVALUE  (http://localhost:9291/get_if_modified/user_55_name/jeff)
+http://localhost:9291/get_if_modified/user_55_name/jeff
 output: john
 response: immediate
 
