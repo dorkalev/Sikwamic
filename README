@@ -1,5 +1,5 @@
-Sikwamic: Simple Key-Value With Comment
----------------------------------------
+Sikwamic: Simple Key-Value With Commet
+--------------------------------------
 
 What is it good for?
 --------------------
@@ -25,7 +25,7 @@ output: john
 http://localhost:9291/get/KEY  (http://localhost:9291/get/user_55_name)
 output: john
 
-3. Commently read a value through: *
+3. Commetly read a value through: *
 http://localhost:9291/get/KEY/OLDVALUE
 This action opens a connection to the server and returns the value of the KEY only once the VALUE is different than inputed
 
