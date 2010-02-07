@@ -3,7 +3,8 @@ Sikwamic: Simple Key-Value With Commet
 
 What is it good for?
 --------------------
-You can use REDIS straight from HTTP with long polling on GETs, commet style. This is very useful for development of web-realtime apps like web-chat
+You can use REDIS straight from HTTP with long polling on GETs, commet style. This is very useful for development of web-realtime apps like web-chat.
+READ: http://en.wikipedia.org/wiki/Comet_(programming)
 
 * Uses RACK - http://github.com/chneukirchen/rack
 * Uses REDIS - http://github.com/antirez/redis
